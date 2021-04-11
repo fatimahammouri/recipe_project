@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %} My Project {% endblock %}</title>
+
+    <!-- this link prevents a icon ERROR that keeps popping in the console -->
+    <link rel="icon" href="data:,">
+    
+</head>
+
+<body>
+    <script> 
+    // get rid of annoying warning 
+     SharedArrayBuffer = ArrayBuffer;
+    // get rid of React DevTools warning
+    __REACT_DEVTOOLS_GLOBAL_HOOK__ = {
+            supportsFiber: true,
+            inject: function() {},
+            onCommitFiberRoot: function() {},
+            onCommitFiberUnmount: function() {},
+          };
+    </script>
+    <!-- script tags to use React Library -->
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js" crossorigin></script>
+   
+
+    {% block body %} whatever {% endblock %}
+</body>
+</html>
