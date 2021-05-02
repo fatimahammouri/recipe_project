@@ -27,7 +27,9 @@ def show_results():
                 'instructionsRequired': True,
                 'cuisine':"american" , # how to get it from the clicked cuisine????????? 
                 'number' : 10}
-
+                
+    response = requests.get(url, params)
+    data = response.json()
 
 if __name__ == '__main__':
 
