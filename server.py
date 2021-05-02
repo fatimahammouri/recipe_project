@@ -17,5 +17,7 @@ def homepage():
 
 ##########################################################################
 
-connect_to_db(app, echo=False)
-app.run(host='0.0.0.0', debug=True, port=5000)
+if __name__ == '__main__':
+
+    connect_to_db(app, echo=False)
+    app.run(host='0.0.0.0', debug=True, port=5000)
