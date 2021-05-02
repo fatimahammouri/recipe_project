@@ -8,5 +8,9 @@ os.system('dropdb recipe')
 os.system('createdb recipe')
 
 
+cuisines_list = ['american', 'african', 'caribbean', 'chinese', 
+                'european', 'cajun', 'french', 'greek', 'indian',
+                'italian', 'mediterranean', 'mexican', 'thai'] 
+
 
 
