@@ -13,21 +13,6 @@
 </head>
 
 <body>
-    <script> 
-    // get rid of annoying warning 
-     SharedArrayBuffer = ArrayBuffer;
-    // get rid of React DevTools warning
-    __REACT_DEVTOOLS_GLOBAL_HOOK__ = {
-            supportsFiber: true,
-            inject: function() {},
-            onCommitFiberRoot: function() {},
-            onCommitFiberUnmount: function() {},
-          };
-    </script>
-    <!-- script tags to use React Library -->
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
-    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js" crossorigin></script>
    
 
     {% block body %} whatever {% endblock %}
