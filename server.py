@@ -3,12 +3,16 @@ from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
 
+
+app = Flask(__name__)
+app.secret_key = "recipe"
+app.jinja_env.undefined = StrictUndefined
 ##########################################################################
 
 
 @app.route('/')
 def homepage():
-    return render_template('homepage.html’)
+    return render_template('homepage.html')
 
 
 ##########################################################################

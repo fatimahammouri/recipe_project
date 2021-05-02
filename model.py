@@ -8,8 +8,7 @@ db = SQLAlchemy()
 ####################################################################################
 
 class Cuisine(db.Model):
-"""the countries table"""
-
+    """Cuisines table"""
     __tablename__ = 'cuisines'
 
     cuisine_id = db.Column(db.Integer, primary_key=True,
@@ -18,7 +17,7 @@ class Cuisine(db.Model):
 
 
     def __repr__(self):
-    return f'<Country country_code={self.country_code} contry_name={self.contry_name}>’
+        return f'<<Cuisine cuisine_id={self.cuisine_id} name={self.cuisine_name}>>'
 
 ####################################################################################
 
