@@ -10,3 +10,8 @@ def create_cuisine(cuisine_name):
     db.session.commit()
 
     return cuisine
+
+##########################################################################
+
+def get_all_cuisines():
+    return Cuisine.query.all()
