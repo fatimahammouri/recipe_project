@@ -17,6 +17,18 @@ def homepage():
 
 ##########################################################################
 
+@app.route("/results/<cuisine>")
+def show_results():
+
+    url = 'https://api.spoonacular.com/recipes/complexSearch'
+    params = {'apiKey': '10908696a3b54d32b5925b490b9a43be',
+               'fillIngredients': True,
+                'addRecipeInformation': True,
+                'instructionsRequired': True,
+                'cuisine':"american" , # how to get it from the clicked cuisine????????? 
+                'number' : 10}
+
+
 if __name__ == '__main__':
 
     connect_to_db(app, echo=False)
