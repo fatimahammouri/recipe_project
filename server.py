@@ -4,6 +4,7 @@ from model import connect_to_db
 import crud
 import requests
 
+
 app = Flask(__name__)
 app.secret_key = "recipe"
 app.jinja_env.undefined = StrictUndefined
@@ -18,14 +19,14 @@ def homepage():
 ##########################################################################
 
 @app.route("/results/<cuisine>")
-def show_results():
+def show_results(cuisine):
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': '10908696a3b54d32b5925b490b9a43be',
                'fillIngredients': True,
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
-                'cuisine':"american" , # how to get it from the clicked cuisine????????? 
+                'cuisine':cuisine, # how to get it from the clicked cuisine????????? 
                 'number' : 10}
                 
     response = requests.get(url, params)
