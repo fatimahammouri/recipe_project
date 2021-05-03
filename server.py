@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, session, redirect, jsonify
 from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
 import requests
-
+import seed
 
 app = Flask(__name__)
 app.secret_key = "recipe"
