@@ -30,6 +30,16 @@ def show_results():
                 
     response = requests.get(url, params)
     data = response.json()
+    results = data['results']
+
+    all_recipes_results = []
+
+    for recipe in results:
+
+        recipe_results = seed.parse_api_results(recipe)
+        all_recipes_results.append(recipe_results)
+        return jsonify(all_recipes_results)
+
 
 if __name__ == '__main__':
 
