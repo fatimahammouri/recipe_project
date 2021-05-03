@@ -3,7 +3,7 @@
 {% block title %} Home page {% endblock %}
 
 {% block body %}
- 
+
 <body class="d-flex h-100 ">
     <div class="homepage_container">
 
@@ -35,7 +35,6 @@
                     </div>
                 </div>
             
-
                 <div class="col-xs-12 col-md-6 col-lg-9">
                     <div class="recipe_cards">
                         <p id= recipe_cards> cards here </p>
@@ -43,7 +42,7 @@
                     </div>
                 </div> 
         </div>      
-
+        
         <div class="row" name="footer_Row">
             <div class="col-xs-12 col-md-12 col-lg-12">
                 <P>This is the footer</P>
@@ -52,21 +51,7 @@
     
                      
     </div>
-    <script>
-
-        let listCuisineItems = document.querySelectorAll(".list_cuisine_item");
-        listCuisineItems.forEach((item, index)=>{
-            item.addEventListener('click', (event)=>{
-            let selectedCuisine = event.currentTarget.innerHTML;
-            console.log(selectedCuisine)
-            $.post('/results/<cuisine>', selectedCuisine ,(response)=>{
-                $('#recipe_cards').html(response)
-            }); 
-            });
-  
-        });
     
-    </script>
 
 </body>
 
