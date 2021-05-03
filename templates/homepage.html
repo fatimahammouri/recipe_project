@@ -4,7 +4,7 @@
 
 {% block body %}
  
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex h-100 ">
     <div class="homepage_container">
 
         <div class="row" name="header_Row">
@@ -58,7 +58,10 @@
         listCuisineItems.forEach((item, index)=>{
             item.addEventListener('click', (event)=>{
             let selectedCuisine = event.currentTarget.innerHTML;
-            console.log(selectedCuisine) 
+            console.log(selectedCuisine)
+            $.post('/results/<cuisine>', selectedCuisine ,(response)=>{
+                $('.recipe_cards').html(response)
+            }); 
             });
   
         });
