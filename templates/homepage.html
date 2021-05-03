@@ -38,7 +38,7 @@
 
                 <div class="col-xs-12 col-md-6 col-lg-9">
                     <div class="recipe_cards">
-                        <h2>recipes cards</h2>
+                        <p id= recipe_cards> cards here </p>
                     
                     </div>
                 </div> 
@@ -60,7 +60,7 @@
             let selectedCuisine = event.currentTarget.innerHTML;
             console.log(selectedCuisine)
             $.post('/results/<cuisine>', selectedCuisine ,(response)=>{
-                $('.recipe_cards').html(response)
+                $('#recipe_cards').html(response)
             }); 
             });
   

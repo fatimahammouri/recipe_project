@@ -40,7 +40,7 @@ def show_results(cuisine):
         recipe_results = seed.parse_api_results(recipe)
         all_recipes_results.append(recipe_results)
         
-    return jsonify(all_recipes_results)
+    return render_template('results.html', all_recipes_results=all_recipes_results)
 
 
 if __name__ == '__main__':
