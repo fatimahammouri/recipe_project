@@ -1,5 +1,22 @@
 {% extends 'base.html'%}
 {% block title %} World Recipe {% endblock %}
 {% block body %}
-  
-  {% endblock %}
+
+{% for recipe in all_recipes_results %}
+    <div>
+        <h2> {{ recipe['title'] }}</h2>
+        <p> 
+        {{ recipe['servings'] }} - 
+        {{ recipe['readyInMinutes'] }} 
+        </p>
+        <p>
+            {{ recipe['instructions'] }}
+        </p>
+
+        <a href="{{recipe['sourceUrl']}}">recipe source</a>
+
+        <img src="{{recipe['image']}}">
+    </div> 
+{% endfor %}
+
+{% endblock %}
