@@ -42,6 +42,11 @@ def show_results(cuisine):
         
     return render_template('results.html', all_recipes_results=all_recipes_results)
 
+##########################################################################
+
+@app.route("/create_recipe")
+def create_recipe():
+    return render_template("create_recipe.html")
 
 if __name__ == '__main__':
 
