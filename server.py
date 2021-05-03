@@ -23,7 +23,7 @@ def show_results(cuisine):
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': '10908696a3b54d32b5925b490b9a43be',
-               'fillIngredients': True,
+               'fillIngredients': False,
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
                 'cuisine':cuisine, # how to get it from the clicked cuisine????????? 
@@ -39,7 +39,8 @@ def show_results(cuisine):
 
         recipe_results = seed.parse_api_results(recipe)
         all_recipes_results.append(recipe_results)
-        return jsonify(all_recipes_results)
+        
+    return jsonify(all_recipes_results)
 
 
 if __name__ == '__main__':
