@@ -18,7 +18,7 @@ def homepage():
 
 ##########################################################################
 
-@app.route("/results/<cuisine>")
+@app.route("/results/<cuisine>", methods=['POST'])
 def show_results(cuisine):
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
