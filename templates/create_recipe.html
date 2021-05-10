@@ -17,7 +17,7 @@
 
         <div class="col-xs-12 col-md-6 col-lg-3">
             <div class="create_recipe_form">
-                <form>
+                <form id="create_recipe_form">
 
 
                     <label for="title">Add a title to your recipe</label><br>
@@ -26,7 +26,7 @@
                         <br>
                     
                     <label for="cuisine">Choose a cuisine to your recipe</label><br>
-                        <select name="cuisine">
+                        <select name="cuisine" id="select_cuisine">
                             <option value="american"> American Cuisine</option>
                             <option value="african">African Cuisine</option>
                             <option value="caribbean">Caribbean Cuisine</option>
@@ -71,7 +71,7 @@
 
     </div>
 
-    <script src="/static/js/create_recipe.js"></script>
+    <script src="/static/js/create_recipe.js"></script>  
 </body>
 
 {% endblock %}
