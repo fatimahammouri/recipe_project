@@ -48,6 +48,15 @@ def show_results(cuisine):
 def create_recipe():
     return render_template("create_recipe.html")
 
+##########################################################################
+
+@app.route("/create_recipe/card")
+def create_recipe_card():
+
+    return render_template("create_recipe_card.html")
+
+
+
 if __name__ == '__main__':
 
     connect_to_db(app, echo=False)
