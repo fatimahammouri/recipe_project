@@ -60,7 +60,8 @@ def create_recipe_card():
     servings = request.args.get("servings")
     image = request.args.get("image")
 
-    return render_template("create_recipe_card.html")
+    return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
+                            instructions=instructions, servings=servings, image=image)
 
 
 if __name__ == '__main__':
