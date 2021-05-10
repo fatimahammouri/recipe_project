@@ -53,6 +53,9 @@ def create_recipe():
 @app.route("/create_recipe/card")
 def create_recipe_card():
 
+    title = request.args.get("title")
+    # print(title)
+    
     return render_template("create_recipe_card.html")
 
 
