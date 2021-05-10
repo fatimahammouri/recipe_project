@@ -57,6 +57,7 @@ def create_recipe_card():
     # print(title)
     cuisine = request.args.get("cuisine")
     instructions = request.args.get("instructions")
+    servings = request.args.get("servings")
 
     return render_template("create_recipe_card.html")
 
