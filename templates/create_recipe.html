@@ -78,9 +78,10 @@
 
         btn.addEventListener("click", (event)=>{
        
-        console.log("event Happening")
-        document.getElementById("recipe_card").innerHTML = title.value ;
-        
+            event.preventDefault();
+            console.log("event Happening")
+            document.getElementById("recipe_card").innerHTML = title.value ;
+
         });
     </script>
 </body>
