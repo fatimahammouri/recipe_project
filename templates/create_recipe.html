@@ -74,6 +74,14 @@
     <script>
         var btn = document.getElementById("button");
         var title = document.getElementById("title");
+        var newRecipeCard = document.getElementById("recipe_card");
+
+        btn.addEventListener("click", (event)=>{
+       
+        console.log("event Happening")
+        document.getElementById("recipe_card").innerHTML = title.value ;
+        
+        });
     </script>
 </body>
 
