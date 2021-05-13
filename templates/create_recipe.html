@@ -81,7 +81,7 @@
             event.preventDefault();
             console.log("event Happening");
 
-            let params = {"title" : title};
+            let params = {"title" : titleValue};
             $.get("/create_recipe/card", params, (response)=>{
                 newRecipeCard.innerHTML = response;
                 console.log("success")
