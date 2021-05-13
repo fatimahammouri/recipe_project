@@ -48,7 +48,7 @@
                         <br>
                         <br>
                     <label for="instructions"> Add instructions to your recipe</label><br>
-                        <textarea name="instructions"></textarea><br>
+                        <textarea name="instructions" id="instructions"></textarea><br>
                         <br>
                     <label for="servings"> Add number of servings to your recipe</label><br>
                         <input type="number" name="servings">
@@ -79,6 +79,7 @@
             let newRecipeCard = document.getElementById("recipe_card");
             let titleValue = document.getElementById("title").value;
             let cuisineValue = documnet.getElementById("select_cuisine").value;
+            let instructionsValue = document.getElementById("instructions").value;
             event.preventDefault();
             console.log("event Happening");
 
