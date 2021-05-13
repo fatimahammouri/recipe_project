@@ -85,8 +85,12 @@
             event.preventDefault();
             console.log("event Happening");
 
-            let params = {"title" : titleValue, "cuisine" : cuisineValue,
-                            "instructions": instructionsValue, "servings": servingsValue};
+            let params = { "title" : titleValue, 
+                            "cuisine" : cuisineValue,
+                            "instructions" : instructionsValue,
+                            "servings" : servingsValue,
+                            "image" : imageValue };
+                            
             $.get("/create_recipe/card", params, (response)=>{
                 newRecipeCard.innerHTML = response;
                 console.log("success")
