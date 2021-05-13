@@ -17,7 +17,7 @@
 
         <div class="col-xs-12 col-md-6 col-lg-3">
             <div class="create_recipe_form">
-                <form id="create_recipe_form" >
+                <form id="create_recipe_form" action="/create_recipe/card">
 
 
                     <label for="title">Add a title to your recipe</label><br>
@@ -73,15 +73,13 @@
     
     <script>
         var btn = document.getElementById("button");
-        var title = document.getElementById("title");
-        var newRecipeCard = document.getElementById("recipe_card");
-
+    
         btn.addEventListener("click", (event)=>{
-       
-            event.preventDefault();
-            console.log("event Happening")
-            document.getElementById("recipe_card").innerHTML = title.value ;
 
+            let newRecipeCard = document.getElementById("recipe_card");
+            let title = document.getElementById("title");
+            event.preventDefault();
+            console.log("event Happening");
         });
     </script>
 </body>
