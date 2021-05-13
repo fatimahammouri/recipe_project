@@ -36,7 +36,8 @@ class Recipe(db.Model):
     instructions = db.Column(db.Text)
     ingredients = db.Column(db.Text)
     
-    
+    def __repr__(self):
+        return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///recipe', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
