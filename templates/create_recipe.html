@@ -78,10 +78,11 @@
 
             let newRecipeCard = document.getElementById("recipe_card");
             let titleValue = document.getElementById("title").value;
+            let cuisineValue = documnet.getElementById("select_cuisine").value;
             event.preventDefault();
             console.log("event Happening");
 
-            let params = {"title" : titleValue};
+            let params = {"title" : titleValue, "cuisine" : cuisineValue};
             $.get("/create_recipe/card", params, (response)=>{
                 newRecipeCard.innerHTML = response;
                 console.log("success")
