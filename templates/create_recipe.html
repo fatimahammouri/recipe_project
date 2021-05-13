@@ -78,7 +78,7 @@
 
             let newRecipeCard = document.getElementById("recipe_card");
             let titleValue = document.getElementById("title").value;
-            let cuisineValue = documnet.getElementById("select_cuisine").value;
+            let cuisineValue = document.getElementById("select_cuisine").value;
             let instructionsValue = document.getElementById("instructions").value;
             let servingsValue = document.getElementById("servings").value;
             let imageValue = document.getElementsByName("image").value;
@@ -90,7 +90,6 @@
                             "instructions" : instructionsValue,
                             "servings" : servingsValue,
                             "image" : imageValue };
-                            
             $.get("/create_recipe/card", params, (response)=>{
                 newRecipeCard.innerHTML = response;
                 console.log("success")
