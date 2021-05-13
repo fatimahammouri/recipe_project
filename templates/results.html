@@ -8,6 +8,19 @@
             
 
         <img src="{{recipe['image']}}">
+
+        <p> 
+            {{ recipe['servings'] }} --- {{ recipe['readyInMinutes'] }} 
+        </p>
+        <p>
+            {{ recipe['instructions'] }}
+        </p>
+
+        {% for ing in recipe['ingredients'] %}
+           <p> {{ing}} </p>
+        {% endfor %}
+
+        <a href="{{recipe['sourceUrl']}}">recipe source</a>
     </div> 
 {% endfor %}
 
