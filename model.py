@@ -21,6 +21,13 @@ class Cuisine(db.Model):
 
 ####################################################################################
 
+class Recipe(db.Model):
+    """Recipes Table"""
+
+    __tablename__ = "recipes"
+
+    
+
 def connect_to_db(flask_app, db_uri='postgresql:///recipe', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
