@@ -38,5 +38,11 @@ def parse_api_results(complex_results):
         instructions = each_step['step']
         recipe_details['instructions'] = instructions
 
+    ingredients = []
+    for each_ingredient in complex_results["extendedIngredients"]:
+        ingredient = each_ingredient["originalString"]
+        ingredients.append(ingredient)
+        recipe_details["ingredients"] = ingredients
+
     return recipe_details
 
