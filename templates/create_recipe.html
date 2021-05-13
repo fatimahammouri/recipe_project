@@ -54,7 +54,7 @@
                         <input type="number" name="servings" id="servings">
                         <br>
                     <label for="image"> Add an Image for your recipe</label><br>
-                        <input type="file" name="image">
+                        <input type="file" name="image" id="image">
                         <br>
                     <button type="submit" id="button" value="submit"> CLICK HERE !!</button>
                 </form>
@@ -81,6 +81,7 @@
             let cuisineValue = documnet.getElementById("select_cuisine").value;
             let instructionsValue = document.getElementById("instructions").value;
             let servingsValue = document.getElementById("servings").value;
+            let imageValue = document.getElementsByName("image").value;
             event.preventDefault();
             console.log("event Happening");
 
