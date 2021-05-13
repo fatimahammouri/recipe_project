@@ -26,6 +26,16 @@ class Recipe(db.Model):
 
     __tablename__ = "recipes"
 
+    recipe_id = db.Column(db.Integer, primary_key=True,
+                        autoincrement=True)
+    title = db.Column(db.String)
+    image = db.Column(db.String)
+    servings = db.Column(db.Integer)
+    sourceUrl = db.Column(db.String)
+    ready_in_minutes = db.Column(db.Integer)
+    instructions = db.Column(db.Text)
+    ingredients = db.Column(db.Text)
+    
     
 
 def connect_to_db(flask_app, db_uri='postgresql:///recipe', echo=True):
