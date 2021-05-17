@@ -1,9 +1,23 @@
 let ingredientList = [];
 
-let addIngredientBtn = document.getElementById("add_ingredient");//button
-let ingredientInputElement = document.getElementById("ingredients");//input element
-let ingredientValue = ingredientInputElement.value;//ingredient that users input
-let listElement = document.querySelector("ul");
+let addIngredientBtn = document.getElementById("add_ingredient"); // button element
+let ingredientInputElement = document.getElementById("ingredients"); // input element
+let ingredientValue = ingredientInputElement.value; // users input
+let listElement = document.querySelector("ul"); // DOM ul element
+
+addIngredientBtn.addEventListener("click", (event) => {
+    ingredientValue = ingredientInputElement.value; 
+    event.preventDefault(); 
+    if (ingredientValue){
+    ingredientList.push(ingredientValue);
+    
+    const element = document.createElement("li");
+        element.textContent = ingredientValue;
+        listElement.append(element);
+        ingredientInputElement.value = "";
+    }
+
+});
 
 ////////////////////////////////////////////////////////////////////////////////////
 var btn = document.getElementById("button");
