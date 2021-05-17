@@ -37,7 +37,7 @@ class Recipe(db.Model):
     cuisine_id = db.Column(db.Integer,
                          db.ForeignKey("cuisines.cuisine_id"),
                          primary_key=True)
-    
+    cuisine = db.relationship('Cuisine', backref='recipes')
     
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
