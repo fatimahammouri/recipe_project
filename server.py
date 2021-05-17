@@ -61,7 +61,7 @@ def create_recipe_card():
     servings = request.json.get("servings")
     image = request.json.get("image")
     ingredients = request.json.get("ingredients")
-    print(request.json)
+    # print(request.json)
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
                             instructions=instructions, servings=servings, image=image, ingredients=ingredients)
 

@@ -31,7 +31,7 @@ class Recipe(db.Model):
     title = db.Column(db.String)
     image = db.Column(db.String)
     servings = db.Column(db.Integer)
-    source_url = db.Column(db.String)
+    
     ready_in_minutes = db.Column(db.Integer)
     instructions = db.Column(db.Text)
     ingredients = db.Column(db.Text)
