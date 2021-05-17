@@ -3,7 +3,7 @@ from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
 import requests
-import seed
+
 
 app = Flask(__name__)
 app.secret_key = "recipe"
@@ -50,18 +50,19 @@ def create_recipe():
 
 ##########################################################################
 
-@app.route("/create_recipe/card")
+@app.route("/create_recipe/card", methods=["POST"])
 def create_recipe_card():
 
-    title = request.args.get("title")
+    title = request.json.get("title")
     # print(title)
-    cuisine = request.args.get("cuisine")
-    instructions = request.args.get("instructions")
-    servings = request.args.get("servings")
-    image = request.args.get("image")
-    
+    cuisine = request.json.get("cuisine")
+    instructions = request.json.get("instructions")
+    servings = request.json.get("servings")
+    image = request.json.get("image")
+    ingredients = request.json.get("ingredients")
+    print(request.json)
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
-                            instructions=instructions, servings=servings, image=image)
+                            instructions=instructions, servings=servings, image=image, ingredients=ingredients)
 
 
 if __name__ == '__main__':

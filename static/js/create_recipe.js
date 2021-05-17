@@ -1,5 +1,5 @@
 var btn = document.getElementById("button");
-    
+
 btn.addEventListener("click", (event)=>{
 
     let newRecipeCard = document.getElementById("recipe_card");
@@ -15,9 +15,16 @@ btn.addEventListener("click", (event)=>{
                     "cuisine" : cuisineValue,
                     "instructions" : instructionsValue,
                     "servings" : servingsValue,
-                    "image" : imageValue };
-    $.get("/create_recipe/card", params, (response)=>{
-        newRecipeCard.innerHTML = response;
-        console.log("success")
-        });
+                    "image" : imageValue,
+                    "ingredients" : ingredientList };
+    $.ajax({
+        url: "/create_recipe/card",
+        data: JSON.stringify(params),
+        contentType: "application/json",
+        method:"POST",
+        success:(response)=>{
+            newRecipeCard.innerHTML = response;
+            console.log("success");
+        }
+    });
 });
