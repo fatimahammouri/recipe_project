@@ -64,7 +64,8 @@ def create_recipe_card():
     ready_in_minutes= request.json.get("ready_in_minutes")
     # print(request.json)
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
-                            instructions=instructions, servings=servings, image=image, ingredients=ingredients)
+                            instructions=instructions, servings=servings, image=image, 
+                            ingredients=ingredients, ready_in_minutes=ready_in_minutes)
 
 
 if __name__ == '__main__':
