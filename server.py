@@ -46,7 +46,8 @@ def show_results(cuisine):
 
 @app.route("/create_recipe")
 def create_recipe():
-    return render_template("create_recipe.html")
+    cuisine_list = crud.get_all_cuisines()
+    return render_template("create_recipe.html", cuisine_list=cuisine_list)
 
 ##########################################################################
 
