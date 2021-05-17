@@ -3,7 +3,7 @@ from jinja2 import StrictUndefined
 from model import connect_to_db
 import crud
 import requests
-
+import parse_function
 
 app = Flask(__name__)
 app.secret_key = "recipe"
@@ -37,7 +37,7 @@ def show_results(cuisine):
 
     for recipe in results:
 
-        recipe_results = seed.parse_api_results(recipe)
+        recipe_results = parse_function.parse_api_results(recipe)
         all_recipes_results.append(recipe_results)
         
     return render_template('results.html', all_recipes_results=all_recipes_results)
