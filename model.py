@@ -34,7 +34,10 @@ class Recipe(db.Model):
     ready_in_minutes = db.Column(db.Integer)
     instructions = db.Column(db.Text)
     ingredients = db.Column(db.Text)
-    cuisine_name = db.Column(db.String)
+    cuisine_id = db.Column(db.Integer,
+                         db.ForeignKey("cuisines.cuisine_id"),
+                         primary_key=True)
+    
     
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
