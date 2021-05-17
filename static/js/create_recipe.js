@@ -1,3 +1,11 @@
+let ingredientList = [];
+
+let addIngredientBtn = document.getElementById("add_ingredient");//button
+let ingredientInputElement = document.getElementById("ingredients");//input element
+let ingredientValue = ingredientInputElement.value;//ingredient that users input
+let listElement = document.querySelector("ul");
+
+////////////////////////////////////////////////////////////////////////////////////
 var btn = document.getElementById("button");
 
 btn.addEventListener("click", (event)=>{
