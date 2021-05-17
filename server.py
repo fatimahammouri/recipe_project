@@ -4,7 +4,7 @@ from model import connect_to_db
 import crud
 import requests
 import parse_function
-
+import model
 app = Flask(__name__)
 app.secret_key = "recipe"
 app.jinja_env.undefined = StrictUndefined
@@ -63,6 +63,7 @@ def create_recipe_card():
     ingredients = request.json.get("ingredients")
     ready_in_minutes= request.json.get("ready_in_minutes")
     # print(request.json)
+    recipe = crud.create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine)
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
                             instructions=instructions, servings=servings, image=image, 
                             ingredients=ingredients, ready_in_minutes=ready_in_minutes)

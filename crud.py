@@ -1,4 +1,4 @@
-from model import (db, Cuisine, connect_to_db)
+from model import (db, Cuisine, connect_to_db, Recipe)
 
 
 
