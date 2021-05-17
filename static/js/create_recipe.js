@@ -39,7 +39,7 @@ btn.addEventListener("click", (event)=>{
                     "instructions" : instructionsValue,
                     "servings" : servingsValue,
                     "image" : imageValue,
-                    "ingredients" : ingredientList, 
+                    "ingredients" : ingredientList.join(" "), 
                     "ready_in_minutes" : readyTimeValue};
     $.ajax({
         url: "/create_recipe/card",
