@@ -30,6 +30,7 @@ btn.addEventListener("click", (event)=>{
     let instructionsValue = document.getElementById("instructions").value;
     let servingsValue = document.getElementById("servings").value;
     let imageValue = document.getElementsByName("image").value;
+    let readyTimeValue = document.getElementById("ready_in_minutes").value;
     event.preventDefault();
     console.log("event Happening");
 
@@ -38,7 +39,8 @@ btn.addEventListener("click", (event)=>{
                     "instructions" : instructionsValue,
                     "servings" : servingsValue,
                     "image" : imageValue,
-                    "ingredients" : ingredientList };
+                    "ingredients" : ingredientList, 
+                    "ready_in_minutes" : readyTimeValue};
     $.ajax({
         url: "/create_recipe/card",
         data: JSON.stringify(params),
