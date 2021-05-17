@@ -7,5 +7,10 @@
     <p>
         {{ instructions }}
     </p>
+    <ul>
+        {% for ing in ingredients %}
+            <li>  {{ ing }}  </li>
+        {% endfor %}
+    </ul>
     <img src="{{ image }}">
 </div>
