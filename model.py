@@ -31,10 +31,10 @@ class Recipe(db.Model):
     title = db.Column(db.String)
     image = db.Column(db.String)
     servings = db.Column(db.Integer)
-    
     ready_in_minutes = db.Column(db.Integer)
     instructions = db.Column(db.Text)
     ingredients = db.Column(db.Text)
+    cuisine_name = db.Column(db.String)
     
     def __repr__(self):
         return f'<<Recipe recipe_id={self.recipe_id} name={self.recipe_name}>>'
