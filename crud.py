@@ -39,5 +39,4 @@ def create_recipe(title, image, servings, ready_in_minutes, instructions, ingred
 
 def get_cuisine_id_from_name(cuisine_name):
     cuisine = Cuisine.query.filter(Cuisine.cuisine_name == cuisine_name).first()
-    print(cuisine)
-    return Cuisine.cuisine_id
+    return cuisine.cuisine_id

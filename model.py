@@ -1,7 +1,7 @@
 """Models for side project"""
 
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime 
+from datetime import datetime
 db = SQLAlchemy()
 
 
