@@ -65,9 +65,9 @@ def create_recipe_card():
     # print(request.json)
 
     # from user input get the cuisine_id
-    cuisine_name = crud.get_cuisine_id_from_name(cuisine)
+    cuisine_id = crud.get_cuisine_id_from_name(cuisine)
     
-    recipe = crud.create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine)
+    recipe = crud.create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine_id)
 
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
                             instructions=instructions, servings=servings, image=image, 
