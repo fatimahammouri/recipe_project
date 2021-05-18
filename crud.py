@@ -22,14 +22,14 @@ def get_all_cuisines():
 
 ##########################################################################
 
-def create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine_name):
+def create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine_id):
     recipe = Recipe(title=title, 
                     image=image, 
                     servings=servings, 
                     ready_in_minutes=ready_in_minutes,
                     instructions=instructions,
                     ingredients=ingredients, 
-                    cuisine_name=cuisine_name)
+                    cuisine_id=cuisine_id)
     db.session.add(recipe)
     db.session.commit()
 
