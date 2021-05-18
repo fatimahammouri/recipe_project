@@ -33,6 +33,11 @@ def create_recipe(title, image, servings, ready_in_minutes, instructions, ingred
     db.session.add(recipe)
     db.session.commit()
 
-    return recipe        
+    return recipe 
 
-    
+##########################################################################
+
+def get_cuisine_id_from_name(cuisine_name):
+    cuisine = Cuisine.query.filter(Cuisine.cuisine_name == cuisine_name).first()
+    print(cuisine)
+    return Cuisine.cuisine_id
