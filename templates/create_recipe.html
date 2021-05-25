@@ -9,7 +9,30 @@
 
     <div class="row" name="header_Row">
         <div class="col-xs-12 col-md-12 col-lg-12">
-            <header>this is the header</header>
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">DivRecipy</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="">Diversed Recipes</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/create_recipe">Share arecipe with us</a>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+            </header>
         </div>
     </div>
 
@@ -38,8 +61,12 @@
                     <label for= "ready_in_minutes">add time this recipe needs to be ready</label>
                         <input type="number" min="0" id="ready_in_minutes">
                         <br>
-                    <label for="instructions"> Add instructions to your recipe</label><br>
-                        <textarea name="instructions" id="instructions"></textarea><br>
+                        
+                        <div class="form-floating">
+                            <label for="instructions">Instructions</label>
+                            <textarea class="form-control" placeholder="Write us Instructions here" id="instructions" style="height: 100px"></textarea>
+                            
+                          </div>
                         <br>
                     <label for="servings"> Add number of servings to your recipe</label><br>
                         <input type="number" name="servings" id="servings" min="0">
@@ -52,7 +79,7 @@
                         <button id="add_ingredient">Add Ingredient</button>
                             <ul id="input_ingredients"></ul>
 
-                    <button type="submit" id="button" value="submit"> CLICK HERE !!</button>
+                    <button type="submit" id="button" value="submit"> Spread my recipe ..</button>
                 </form>
             </div>
         </div>
