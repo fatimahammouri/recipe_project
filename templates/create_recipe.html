@@ -26,10 +26,12 @@
                         <br>
                     
                     <label for="cuisine">Choose a cuisine to your recipe</label><br>
-                        <select name="cuisine" id="select_cuisine">
+                        <select name="cuisine" id="select_cuisine" class="form-select" multiple aria-label="multiple select example">
                             
                             {% for cuisine in cuisine_list %}
-                                <option> {{ cuisine }} </option>
+                            
+                                <option >{{ cuisine }}</option>
+                                
                             {% endfor %}
                         </select>
                         <br>
