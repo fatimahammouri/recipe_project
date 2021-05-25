@@ -2,21 +2,76 @@
 {% block title %} World Recipe {% endblock %}
 {% block body %}
 
-{% for recipe in all_recipes_results %}
-    <div>
-        <h2> {{ recipe['title'] }}</h2>
-        <p> 
-        {{ recipe['servings'] }} - 
-        {{ recipe['readyInMinutes'] }} 
-        </p>
-        <p>
-            {{ recipe['instructions'] }}
-        </p>
+<body class="d-flex h-100 ">
+    <div class="homepage_container">
 
-        <a href="{{recipe['sourceUrl']}}">recipe source</a>
+        <div class="row" name="header_Row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="#">DivRecipy</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                          <li class="nav-item"> <a class="nav-link active" aria-current="page" href="/">Home</a> </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="">Diversed Recipes</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/create_recipe">Share arecipe with us</a>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </div>
+                  </nav>
+                
+            </div>
 
-        <img src="{{recipe['image']}}">
-    </div> 
-{% endfor %}
+            
+        
+        <div class="row" name="main_Row">
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="sidenav">
+                        <ul class="list-group list-group-flush">
+                        <li class="list_cuisine_item" value="american" >american </li>
+                        <li class="list_cuisine_item" value="african"> african </li>
+                        <li class="list_cuisine_item" value="caribbean"> caribbean </li>
+                        <li class="list_cuisine_item" value="chinese"> chinese </li>
+                        <li class="list_cuisine_item" value="cajun"> cajun </li>
+                        <li class="list_cuisine_item" value="french"> french </li>
+                        <li class="list_cuisine_item" value="greek"> greek </li>
+                        <li class="list_cuisine_item" value="indian"> indian </li>
+                        <li class="list_cuisine_item" value="italian"> italian </li>
+                        <li class="list_cuisine_item" value="mediterranean"> mediterranean </li>
+                        <li class="list_cuisine_item" value="mexican"> mexican </li>
+                        <li class="list_cuisine_item" value="thai"> thai </li>
 
+    
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="col-xs-12 col-md-6 col-lg-9">
+                    <div class="recipe_cards">
+                        <p id="recipe_cards"> cards here </p>
+                    
+                    </div>
+                </div> 
+        </div>      
+        
+        <div class="row" name="footer_Row">
+            <div class="col-xs-12 col-md-12 col-lg-12">
+                <P>This is the footer</P>
+            </div> 
+        </div>
+    
+                     
+    </div>
+    <script src="/static/js/homepage.js"></script>
+
+</body>
 {% endblock %}

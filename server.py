@@ -15,7 +15,9 @@ app.jinja_env.undefined = StrictUndefined
 def homepage():
     return render_template('homepage.html')
 
-
+@app.route('/recipes')
+def get_recipes():
+    return render_template('recipes.html')
 ##########################################################################
 
 @app.route("/results/<cuisine>", methods=['POST'])
