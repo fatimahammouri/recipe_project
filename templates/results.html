@@ -2,26 +2,27 @@
 {% block title %} World Recipe {% endblock %}
 {% block body %}
 
+<div class="row row-cols-1 row-cols-md-3 g-4"></div>
 {% for recipe in all_recipes_results %}
-    <div>
-        <h2> {{ recipe['title'] }}</h2>
-            
 
-        <img src="{{recipe['image']}}">
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{ recipe['image'] }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ recipe['title'] }} </h5>
+          <p class="card-text"> serves- {{ recipe['servings'] }} | time- {{ recipe['readyInMinutes'] }}</p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">
+              <a href="{{ recipe['sourceUrl'] }}"> Go to source </a>
+          </small>
+        </div>
+      </div>
+    </div>
 
-        <p> 
-            {{ recipe['servings'] }} --- {{ recipe['readyInMinutes'] }} 
-        </p>
-        <p>
-            {{ recipe['instructions'] }}
-        </p>
-
-        {% for ing in recipe['ingredients'] %}
-           <p> {{ing}} </p>
-        {% endfor %}
-
-        <a href="{{recipe['sourceUrl']}}">recipe source</a>
-    </div> 
-{% endfor %}
+  {% endfor %}
 
 {% endblock %}
+
+
+
