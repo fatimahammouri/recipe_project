@@ -20,16 +20,37 @@
 </head>
 
 <body>
+
+    <div class="row" name="header_Row">
+        <div class="col-xs-12 col-md-12 col-lg-12">
+            <header>
+              <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="/">Div.Recipy</a>
+
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item"> <a class="nav-link active" aria-current="page" href="/">Home</a> </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/recipes">Diversed Recipes</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/create_recipe">Share a recipe with us</a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </header>
+        </div>
+    </div>
+
+    
     {% block body %} whatever {% endblock %}
 
 </body>
-
-{% block footer %} 
-   
-   <!-- <div class="row" name="footer_Row">
-            <div class="col-xs-12 col-md-12 col-lg-12">
-                <P>This is the footer</P>
-            </div> 
-        </div> -->
-   {% endblock %}
+  
 </html>
