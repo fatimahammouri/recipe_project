@@ -13,10 +13,10 @@ def parse_api_results(complex_results):
     recipe_details['readyInMinutes'] = complex_results['readyInMinutes']
     recipe_details['sourceUrl'] = complex_results['sourceUrl']
     # recipe_details['instructions'] = complex_results['instructions']..we need a different way to get the steps
-
+    
     for each_step in complex_results['analyzedInstructions'][0]['steps']:
         instructions = each_step['step']
-        recipe_details['instructions'] = instructions
+    recipe_details['instructions'] = instructions
 
     
     for each_ingredient in complex_results["extendedIngredients"]:

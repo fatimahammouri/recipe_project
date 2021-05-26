@@ -25,11 +25,11 @@ def show_results(cuisine):
 
     url = 'https://api.spoonacular.com/recipes/complexSearch'
     params = {'apiKey': '10908696a3b54d32b5925b490b9a43be',
-               'fillIngredients': True,
+                'cuisine':cuisine,
+                'fillIngredients': True,
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
-                'cuisine':cuisine, # how to get it from the clicked cuisine????????? 
-                'number' : 10}
+                'number' : 2}
                 
     response = requests.get(url, params)
     data = response.json()
@@ -41,7 +41,7 @@ def show_results(cuisine):
 
         recipe_results = parse_function.parse_api_results(recipe)
         all_recipes_results.append(recipe_results)
-        
+    print(all_recipes_results)
     return render_template('results.html', all_recipes_results=all_recipes_results)
 
 ##########################################################################

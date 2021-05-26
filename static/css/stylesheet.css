@@ -78,6 +78,17 @@ body {
 .welcome-text a:hover {
 	background: #fff;
 	color: #333;
+	
+	
+}
+
+.list_cuisine_item{
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #00fecb;
+	background-color: #333;	
+	border-radius: 50%
+	
 }
 /*resposive*/
 
@@ -114,3 +125,10 @@ body {
 		font-size: 30px;
 	}
 }
+
+.list_cuisine_item:hover {
+	transition-duration: 0.4s;
+	background-color: #fff;
+	color: white;
+	color: #333;
+  }
