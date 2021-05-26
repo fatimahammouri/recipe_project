@@ -29,7 +29,7 @@ def show_results(cuisine):
                 'fillIngredients': True,
                 'addRecipeInformation': True,
                 'instructionsRequired': True,
-                'number' : 2}
+                'number' : 20}
                 
     response = requests.get(url, params)
     data = response.json()
