@@ -5,6 +5,12 @@ import crud
 import requests
 import parse_function
 import model
+import cloudinary.uploader
+import os
+
+# CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
+# CLOUDINARY_KEY_SECRET = os.environ['CLOUDINARY_SECRET']
+
 app = Flask(__name__)
 app.secret_key = "recipe"
 app.jinja_env.undefined = StrictUndefined
@@ -41,7 +47,7 @@ def show_results(cuisine):
 
         recipe_results = parse_function.parse_api_results(recipe)
         all_recipes_results.append(recipe_results)
-    print(all_recipes_results)
+    # print(all_recipes_results)
     return render_template('results.html', all_recipes_results=all_recipes_results)
 
 ##########################################################################
@@ -61,15 +67,23 @@ def create_recipe_card():
     cuisine = request.json.get("cuisine")
     instructions = request.json.get("instructions")
     servings = request.json.get("servings")
-    image = request.json.get("image")
     ingredients = request.json.get("ingredients")
     ready_in_minutes= request.json.get("ready_in_minutes")
+    image = request.json.get("image")
+    # user_file = request.json.get("file")
+    # print(user_file)
+    # result = cloudinary.uploader.upload(user_file,
+                    # api_key=CLOUDINARY_KEY,
+                    # api_secret=CLOUDINARY_KEY_SECRET,
+                    # cloud_name='dplmlgxqq')
+    # image = result['secure_url']
+    
     # print(request.json)
 
     # from user input get the cuisine_id
-    cuisine_id = crud.get_cuisine_id_from_name(cuisine)
+    # cuisine_id = crud.get_cuisine_id_from_name(cuisine)
     
-    recipe = crud.create_recipe(title, image, servings, ready_in_minutes, instructions, ingredients, cuisine_id)
+    recipe = crud.create_recipe(title, servings, ready_in_minutes, instructions, ingredients, cuisine, image)
 
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
                             instructions=instructions, servings=servings, image=image, 

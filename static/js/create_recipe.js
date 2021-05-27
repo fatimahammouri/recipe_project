@@ -3,15 +3,15 @@ let ingredientList = [];
 let addIngredientBtn = document.getElementById("add_ingredient"); // button element
 let ingredientInputElement = document.getElementById("ingredients"); // input element
 let ingredientValue = ingredientInputElement.value; // users input
-let listElement = document.querySelector("ul"); // DOM ul element
+let listElement = document.getElementById("input_ingredients"); // DOM ul element
 
 addIngredientBtn.addEventListener("click", (event) => {
     ingredientValue = ingredientInputElement.value; 
     event.preventDefault(); 
     if (ingredientValue){
-    ingredientList.push(ingredientValue);
+        ingredientList.push(ingredientValue);
     
-    const element = document.createElement("li");
+        const element = document.createElement("li");
         element.textContent = ingredientValue;
         listElement.append(element);
         ingredientInputElement.value = "";
@@ -39,7 +39,7 @@ btn.addEventListener("click", (event)=>{
                     "instructions" : instructionsValue,
                     "servings" : servingsValue,
                     "image" : imageValue,
-                    "ingredients" : ingredientList.join(" "), 
+                    "ingredients" : ingredientList, 
                     "ready_in_minutes" : readyTimeValue};
     $.ajax({
         url: "/create_recipe/card",
