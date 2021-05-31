@@ -7,9 +7,10 @@ import parse_function
 import model
 import cloudinary.uploader
 import os
+import re
 
-# CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
-# CLOUDINARY_KEY_SECRET = os.environ['CLOUDINARY_SECRET']
+CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
+CLOUDINARY_KEY_SECRET = os.environ['CLOUDINARY_SECRET']
 
 app = Flask(__name__)
 app.secret_key = "recipe"
@@ -61,22 +62,42 @@ def create_recipe():
 
 @app.route("/create_recipe/card", methods=["POST"])
 def create_recipe_card():
-
-    title = request.json.get("title")
+    # import pdb 
+    # pdb.set_trace()
+    title = request.form.get("title")
     # print(title)
-    cuisine = request.json.get("cuisine")
-    instructions = request.json.get("instructions")
-    servings = request.json.get("servings")
-    ingredients = request.json.get("ingredients")
-    ready_in_minutes= request.json.get("ready_in_minutes")
-    image = request.json.get("image")
-    # user_file = request.json.get("file")
-    # print(user_file)
-    # result = cloudinary.uploader.upload(user_file,
-                    # api_key=CLOUDINARY_KEY,
-                    # api_secret=CLOUDINARY_KEY_SECRET,
-                    # cloud_name='dplmlgxqq')
-    # image = result['secure_url']
+    cuisine = request.form.get("cuisine")
+    instructions = request.form.get("instructions")
+    servings = request.form.get("servings")
+    
+    ready_in_minutes= request.form.get("ready_in_minutes")
+    image_cloud = request.files.get("image")
+    
+    # ingredients list manipulations
+    ingredient_list = request.form.get("ingredients")
+    # print(ingredient_list, type(ingredient_list)) 
+    # print("list :" + ingredient_list)
+    # print(type(ingredient_list))
+    ingredients = ingredient_list.strip('][') # to be stored in db
+    # print("stored in db", ingredients, type(ingredients))
+    ing_list = ingredient_list.strip('][').split(', ') #to be rendered
+    # print("rendering now", ing_list, type(ing_list))
+    maybe = re.sub(r'["]','',ingredients)
+    # print("maybe is ", maybe, type(maybe))
+    # maybe2 = maybe.split(', ')
+    # print("maybe 2 ", maybe2, type(maybe2))
+
+
+
+    if image_cloud:
+        result = cloudinary.uploader.upload(image_cloud,
+                    api_key=CLOUDINARY_KEY,
+                    api_secret=CLOUDINARY_KEY_SECRET,
+                    cloud_name='dplmlgxqq')
+
+        image = result['secure_url']
+    else:
+        image = None
     
     # print(request.json)
 
@@ -87,7 +108,7 @@ def create_recipe_card():
 
     return render_template("create_recipe_card.html", title=title, cuisine=cuisine,
                             instructions=instructions, servings=servings, image=image, 
-                            ingredients=ingredients, ready_in_minutes=ready_in_minutes)
+                            ingredients=maybe, ready_in_minutes=ready_in_minutes)
 
 
 if __name__ == '__main__':
